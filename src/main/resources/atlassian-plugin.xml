@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<atlassian-plugin key="${atlassian.plugin.key}" name="${project.name}" plugins-version="2"> 
+  <plugin-info> 
+    <description>${project.description}</description>  
+    <version>${project.version}</version>  
+    <vendor name="${project.organization.name}" url="${project.organization.url}"/>  
+    <param name="plugin-icon">images/pluginIcon.png</param>  
+    <param name="plugin-logo">images/pluginLogo.png</param> 
+  </plugin-info>  
+  <!-- add our i18n resource -->  
+  <resource type="i18n" name="i18n" location="automation"/>  
+  <!-- add our web resources -->  
+  <web-resource key="automation-resources" name="automation Web Resources"> 
+    <dependency>com.atlassian.auiplugin:ajs</dependency>  
+    <resource type="download" name="automation.css" location="/css/automation.css"/>  
+    <resource type="download" name="automation.js" location="/js/automation.js"/>  
+    <resource type="download" name="images/" location="/images"/>  
+    <context>automation</context> 
+  </web-resource>  
+  <web-item name="SetupAutomation" i18n-name-key="setup-automation.name" key="setup-automation" section="admin_applications_section/admin_applications_integrations_section" weight="1000"> 
+    <description key="setup-automation.description">The SetupAutomation Plugin</description>  
+    <label key="setup-automation.label"/>  
+    <link linkId="setup-automation-link">http://localhost:2990/jira/plugins/servlet/automation</link>
+  </web-item>  
+  <servlet name="Automation Servlet" i18n-name-key="automation-servlet.name" key="automation-servlet" class="de.mattes.uol.servlet.AutomationServlet"> 
+    <description key="automation-servlet.description">The Automation Servlet Plugin</description>  
+    <url-pattern>/automation*</url-pattern>
+  </servlet>
+</atlassian-plugin>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base href="jira/plugins/servlet/automation"/>
+    <meta name="decorator" content="atl.general"/>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Hauptseite des Jira-Plugins">
+    <title>UserAutomation</title>
+    ##    <link rel="stylesheet" href="../../../../BAPlugin/BAPlugin/src/main/resources/main.css">
+</head>
+<body>
+<h1>AutoSetup</h1>
+
+<p>
+    Dieses Plugin bietet die Möglichkeit Nutzer und Gruppen und Projekte auf Grundlage einer csv-Datei automatisiert
+    anlegen zu lassen.
+    <br>
+    Außerdem können hier die Atlassian-Tools auswählt werden, für welche zusätzlich Bereiche und/oder Projekte angelegt
+    werden sollen.
+</p>
+
+<hr>
+
+<form method="post" enctype="multipart/form-data">
+    <div>
+        <label>Lade hier die csv-Datei hoch.</label>
+        <input name="file" type="file" size="50" accept="text/*" id="file">
+    </div>
+        <label>Hochladen</label>
+        <input name="upload" type="button" id="upload">
+    <div></div>
+</form>
+
+<br>
+
+<h4>Gefundene Gruppen und Nutzer:</h4>
+<h6>(bitte markieren, welche Gruppen und Nutzer angelegt werden sollen)</h6>
+
+<table>
+    <tr>
+        <th>Gruppe A
+            <input type="checkbox" id="group1"
+                   name="groups" value="group1">
+        </th>
+        <td style="width:60%">vorname1, nachname1<br>
+            vorname2, nachname2<br>
+            vorname3, nachname3<br>
+            vorname4, nachname4<br>
+            vorname5, nachname5<br>
+            vorname6, nachname6<br>
+            vorname..., nachname...
+        </td>
+    </tr>
+    <tr>
+        <th>Gruppe B
+            <input type="checkbox" id="group2"
+                   name="groups" value="group2">
+        </th>
+        <td style="width:30%">vorname1, nachname1<br>
+            vorname2, nachname2<br>
+            vorname3, nachname3<br>
+            vorname4, nachname4<br>
+            vorname5, nachname5<br>
+            vorname6, nachname6<br>
+            vorname..., nachname...
+        </td>
+    </tr>
+    <tr>
+        <th>Gruppe C
+            <input type="checkbox" id="group3"
+                   name="groups" value="group3">
+        </th>
+        <td style="width:30%">vorname1, nachname1<br>
+            vorname2, nachname2<br>
+            vorname3, nachname3<br>
+            vorname4, nachname4<br>
+            vorname5, nachname5<br>
+            vorname6, nachname6<br>
+            vorname..., nachname...
+        </td>
+    </tr>
+    <tr>
+        <th>Gruppe ...
+            <input type="checkbox" id="group4"
+                   name="groups" value="group4">
+        </th>
+        <td style="width:30%">vorname1, nachname1<br>
+            vorname2, nachname2<br>
+            vorname3, nachname3<br>
+            vorname4, nachname4<br>
+            vorname5, nachname5<br>
+            vorname6, nachname6<br>
+            vorname..., nachname...
+        </td>
+    </tr>
+    <tr>
+        <th>Lehrende
+            <input type="checkbox" id="instructors"
+                   name="groups" value="instructors">
+        </th>
+        <td style="width:30%">vorname1, nachname1<br>
+            vorname2, nachname2<br>
+            vorname3, nachname3<br>
+            vorname4, nachname4<br>
+            vorname5, nachname5<br>
+            vorname6, nachname6<br>
+            vorname..., nachname...
+        </td>
+    </tr>
+    <tr>
+        <th>suche keine Gruppe
+            <input type="checkbox" id="nonparticipating"
+                   name="groups" value="nonparticipating">
+        </th>
+        <td style="width:30%">vorname1, nachname1<br>
+            vorname2, nachname2<br>
+            vorname3, nachname3<br>
+            vorname4, nachname4<br>
+            vorname5, nachname5<br>
+            vorname6, nachname6<br>
+            vorname..., nachname...
+        </td>
+    </tr>
+    <tr>
+        <th>Gruppenlos
+            <input type="checkbox" id="groupless"
+                   name="groups" value="groupless">
+        </th>
+        <td style="width:30%">vorname1, nachname1<br>
+            vorname2, nachname2<br>
+            vorname3, nachname3<br>
+            vorname4, nachname4<br>
+            vorname5, nachname5<br>
+            vorname6, nachname6<br>
+            vorname..., nachname...
+        </td>
+    </tr>
+</table>
+
+<br>
+
+<hr>
+
+<form>
+    <p>Bitte wähle die benötigten Atlassian-Tools aus:</p>
+    <div>
+        <input type="checkbox" id="tool1"
+               name="tool" value="confluence">
+        <label for="tool1">
+            Confluence
+        </label>
+
+        <input type="checkbox" id="tool2"
+               name="tool" value="bitbucket">
+        <label for="tool2">
+            Bitbucket
+        </label>
+
+        <input type="checkbox" id="tool3"
+               name="tool" value="bamboo">
+        <label for="tool3">
+            Bamboo
+        </label>
+    </div>
+</form>
+
+<br>
+
+<hr>
+
+<button>Anwenden</button>
+</body>
+</html>
