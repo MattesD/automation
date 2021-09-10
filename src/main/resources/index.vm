@@ -28,7 +28,7 @@
         <input name="file" type="file" size="50" accept="text/*" id="file">
     </div>
         <label>Hochladen</label>
-        <input name="upload" type="button" id="upload">
+        <input name="upload" type="submit" id="upload">
     <div></div>
 </form>
 
