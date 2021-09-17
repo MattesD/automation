@@ -12,6 +12,13 @@
     <name>automation</name>
     <description>This is the de.mattes.uol:automation plugin for Atlassian JIRA.</description>
     <packaging>atlassian-plugin</packaging>
+    <repositories>
+        <repository>
+            <id>Atlassian</id>
+            <name>Atlassian Public</name>
+            <url>https://maven.atlassian.com/content/repositories/atlassian-public</url>
+        </repository>
+    </repositories>
     <dependencies>
         <dependency>
             <groupId>com.atlassian.jira</groupId>
@@ -40,7 +47,7 @@
         <dependency>
             <groupId>com.opencsv</groupId>
             <artifactId>opencsv</artifactId>
-            <version>5.5.2</version>
+            <version>4.6</version>
             <scope>provided</scope>
         </dependency>
 
@@ -148,6 +155,13 @@
                         </pluginArtifact>
                     </pluginArtifacts>
                     -->
+                    <applications>
+                        <application>
+                            <applicationKey>jira-software</applicationKey>
+                            <version>${jira.version}</version>
+                        </application>
+                    </applications>
+
                     <enableQuickReload>true</enableQuickReload>
                     <!-- See here for an explanation of default instructions: -->
                     <!-- https://developer.atlassian.com/docs/advanced-topics/configuration-of-instructions-in-atlassian-plugins -->
@@ -156,7 +170,7 @@
                         <!-- Add package to export here -->
                         <Export-Package>de.mattes.uol.automation.api,</Export-Package>
                         <!-- Add package import here -->
-                        <Import-Package>org.springframework.osgi.*;resolution:="optional", org.eclipse.gemini.blueprint.*;resolution:="optional", *</Import-Package>
+                        <Import-Package>org.springframework.osgi.*;resolution:="optional", org.eclipse.gemini.blueprint.*;resolution:="optional";!com.atlassian.inject, *</Import-Package>
                         <!-- Ensure plugin is spring powered -->
                         <Spring-Context>*</Spring-Context>
                     </instructions>

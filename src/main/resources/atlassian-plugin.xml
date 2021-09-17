@@ -30,8 +30,4 @@
     <url-pattern>/automation*</url-pattern>
   </servlet>
 
-  <!--<servlet name="Automation Upload Servlet" i18n-name-key="automation-upload-servlet.name" key="automation-upload-servlet" class="de.mattes.uol.servlet.AutomationUploadServlet">
-    <description key="automation-upload-servlet.description">The Automation Upload Servlet Plugin</description>
-    <url-pattern>/automationupload*</url-pattern>
-  </servlet>-->
 </atlassian-plugin>
